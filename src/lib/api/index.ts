@@ -1,0 +1,1 @@
+export { setAxiosDefaults } from './config'

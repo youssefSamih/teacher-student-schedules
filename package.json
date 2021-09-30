@@ -1,0 +1,76 @@
+{
+  "name": "adminka",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "start": "react-scripts start",
+    "build": "DISABLE_ESLINT_PLUGIN=true react-scripts build",
+    "test": "react-scripts test --watchAll=false",
+    "eject": "react-scripts eject",
+    "lint": "eslint -c .eslintrc.precommit.js --ext .ts,.tsx src",
+    "tsconfig": "tsc --project tsconfig.precommit.json",
+    "docker-build": "docker build -t adminka .",
+    "docker-run": "docker run -p 8080:8080 adminka",
+    "docker": "yarn docker-build && yarn docker-run",
+    "precommit": "yarn lint && yarn tsconfig",
+    "prepare": "rm -rf ./.husky && husky install && husky add .husky/pre-commit \"yarn precommit\""
+  },
+  "dependencies": {
+    "axios": "0.21.2",
+    "date-fns": "2.23.0",
+    "deep-equal": "2.0.5",
+    "devextreme": "21.1.5",
+    "devextreme-react": "21.1.5",
+    "outstated": "3.0.1",
+    "qs": "6.10.1",
+    "ramda": "0.27.1",
+    "react": "17.0.2",
+    "react-dom": "17.0.2",
+    "react-flatpickr": "3.10.7",
+    "react-guard": "0.5.0",
+    "react-router-dom": "5.2.0",
+    "react-scripts": "4.0.3",
+    "react-toastify": "8.0.2",
+    "styled-components": "5.3.0"
+  },
+  "devDependencies": {
+    "@types/deep-equal": "1.0.1",
+    "@types/qs": "6.9.7",
+    "@types/ramda": "0.27.44",
+    "@types/react": "17.0.16",
+    "@types/react-dom": "17.0.9",
+    "@types/react-flatpickr": "3.8.4",
+    "@types/react-router-dom": "5.1.8",
+    "@types/styled-components": "5.1.12",
+    "@typescript-eslint/eslint-plugin": "4.29.0",
+    "@typescript-eslint/eslint-plugin-tslint": "4.29.0",
+    "@typescript-eslint/parser": "4.29.0",
+    "eslint": "7.32.0",
+    "eslint-plugin-jsdoc": "36.0.6",
+    "eslint-plugin-prefer-arrow": "1.2.3",
+    "eslint-plugin-react": "7.24.0",
+    "eslint-plugin-react-hooks": "4.2.0",
+    "husky": "7.0.1",
+    "tslint": "6.1.3",
+    "tslint-react": "5.0.0",
+    "typescript": "4.3.5"
+  },
+  "eslintConfig": {
+    "extends": [
+      "react-app",
+      "react-app/jest"
+    ]
+  },
+  "browserslist": {
+    "production": [
+      ">0.2%",
+      "not dead",
+      "not op_mini all"
+    ],
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version"
+    ]
+  }
+}

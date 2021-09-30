@@ -1,0 +1,14 @@
+body {
+  margin: 0;
+}
+
+* {
+  box-sizing: border-box;
+  -webkit-tap-highlight-color: transparent;
+  font-family: Roboto, Arial, serif;
+}
+
+#root {
+  width: 100vw;
+  overflow: hidden;
+}
